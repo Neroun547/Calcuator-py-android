@@ -22,10 +22,9 @@ class Container(BoxLayout):
             return
         if op == 'Del':
             self.operation = None
-            self.writeTextId.text = '' 
-            print(self.result)
+            self.number = self.number[:-1]
+            self.writeTextId.text = self.number 
         if op == '=':
-            print(self.result)
             self.outPutTextId.text = str(self.result)
             self.number = ''
             self.operation = None 
@@ -47,7 +46,6 @@ class Container(BoxLayout):
             self.result = self.result ** float(num)
 
     def change_operation(self, op):
-        print(op)
         if op == 'Del':
             self.selectOperationOne('', 'Del')
             return
